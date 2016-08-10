@@ -1,0 +1,12 @@
+<h1>Type in your search</h1>
+<p>Find all kinds of exiting enhancers</p>
+
+
+
+<%= form_for(product, remote: true, url: products_result_url) do |f| %>
+
+	<%= f.text_field :lookup %>
+
+	<%= f.submit 'Search' %>
+
+<% end %>

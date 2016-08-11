@@ -4,7 +4,10 @@ class ProductsController < ApplicationController
   end
 
   def result
-    @products = Product.search(params[:product][:lookup])
-    binding.pry
+    @products_ids = Product.search(params[:product][:lookup]).map(&:id)
+    @products = Product.find(@products_ids)
+    respond_to do |format|
+      format.js
+    end
   end
 end

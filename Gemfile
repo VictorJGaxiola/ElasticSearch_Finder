@@ -53,3 +53,5 @@ gem 'carrierwave'
 gem 'pry-rails'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'fog'

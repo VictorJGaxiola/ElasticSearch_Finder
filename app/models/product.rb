@@ -22,6 +22,16 @@ class Product < ActiveRecord::Base
     def search(*args,&block)
       __elasticsearch__.search(*args, &block)
     end
+
+    def recreate_photos
+      self.find_each do |product|
+        begin
+          product.imagen.recreate_versions! if product.imagen?
+        rescue => e
+          puts "ERROR: #{product.id} -> #{e.to_s}"
+        end
+      end
+    end
   end
 
 end

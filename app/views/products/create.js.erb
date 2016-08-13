@@ -1,0 +1,5 @@
+<%if @product.id.nil? %>
+  $('.col-md-6:last').append("FATALLITY!")
+<%else%>
+  $('.col-md-6:last').append("Nombre: <%= @product.name%>")
+<%end %>

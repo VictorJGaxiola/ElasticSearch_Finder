@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'products/search'
-
+  get  'products/search'
   post 'products/result'
+  get  'products/new'
+  post 'products/create', as: 'products'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

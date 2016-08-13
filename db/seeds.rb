@@ -7,6 +7,9 @@
 #   Mayor.create(name: 'Emanuel'', city: cities.first)
 #AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
+10.times do |i|
+  Category.create(name: "Categoria #{i}")
+end
 #products = [
   #'Mama B Blog',
   #'Computer Audiophile',

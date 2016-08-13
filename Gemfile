@@ -55,3 +55,5 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'fog'
+gem "haml-rails", "~> 0.9"
+gem 'bootstrap_form'

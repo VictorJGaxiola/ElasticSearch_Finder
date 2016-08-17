@@ -15,6 +15,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def products
+    
+  end
+
   def result
     @products_ids = Product.search(params[:product][:lookup]).map(&:id)
     @products = Product.find(@products_ids)
@@ -28,4 +32,6 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :description, :price, :imagen, :stock, :category_id)
     end
+
+
 end

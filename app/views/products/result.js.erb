@@ -1,7 +1,2 @@
-$('#elements p').remove();
-<% @products.each do |product| %>
-  var paragraph = "<p>name: ";
-  paragraph += '<%= product.name %> description: <%= product.description %> ';
-  var img = "<img src='<%= product.imagen_url(:medium) %>' />"
-  $('#elements').append(paragraph + img);
-<% end %>
+$("body").append("<%= escape_javascript(render partial: 'product_list', locals: { products: @products } ) %>"); 
+

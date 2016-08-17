@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total_price: 9.99
+  open: false
+  user_id: 
+
+two:
+  total_price: 9.99
+  open: false
+  user_id: 

@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel'', city: cities.first)
 #AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
-10.times do |i|
-  Category.create(name: "Categoria #{i}")
-end
+#10.times do |i|
+  #Category.create(name: "Categoria #{i}")
+#end
 #products = [
   #'Mama B Blog',
   #'Computer Audiophile',
@@ -65,6 +65,6 @@ end
   #Product.create(name: name, stock: rand(10), category_id: [1,2,3,4].sample)
 #end
 
-Product.all.each do |product|
-  product.update(created_at: Date.today - [3,4,6,8,10,11,15].sample.day)
-end
+#Product.all.each do |product|
+  #product.update(created_at: Date.today - [3,4,6,8,10,11,15].sample.day)
+#end

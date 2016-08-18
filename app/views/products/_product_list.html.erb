@@ -1,26 +1,13 @@
-<div class="container">
-  <div class="page-header">
-    <h1>Products <small> for sale</small></h1>
-  </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Preview</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Stock</th>
-        <th>Buy</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td> </td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td> 23</td>
-        <td><button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>  Buy</button></td>
-      </tr>
-    </tbody>
-</div>
+<% products.each do |product| %>
+  <tr class='item'>
+    <td><%= image_tag product.imagen_url(:medium) %></td>
+    <td><%= product.name %></td>
+    <td><%= product.description %></td>
+    <td><%= product.price %></td>
+    <td><%= product.stock %></td>
+    <%#product_add_chart_path(product)%>
+    <td><%= link_to '#', remote: true, class: 'btn btn-primary btn-xs' do %>
+      <span class="glyphicon glyphicon-credit-card" aria-hidden="true">
+      <% end %></td>
+  </tr>
+<% end %>

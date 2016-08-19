@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/maps'
+
   get  'products/search'
   post 'products/result'
   get  'products/new'

@@ -1,0 +1,36 @@
+%script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?\r\nkey=AIzaSyBqNDZZF3RsbUTnQX-UjOEiqY9RrVvjTN0&callback=initMap"}
+%script{:src => "https://cdn.rawgit.com/googlemaps/v3-utility-library/master/markerclustererplus/src/markerclusterer.js"}
+
+:javascript
+  function initMap(){
+
+    var placeMarker = function(location, map){
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    }
+    var loadMap = function(selectorId, zoom){
+      var handler = Gmaps.build('Google');
+      handler.buildMap({
+       internal: {id: selectorId},
+       provider: {
+        backgroundColor: "red",
+        center: new google.maps.LatLng(20.6739384, -103.4054544),
+        zoom: zoom
+       }
+      }, function(){
+        map = handler.getMap();
+        google.maps.event.addListener(map, 'click', function(e){
+          placeMarker(e.latLng, map);
+        });
+      });
+    }
+    $.each($('div[id^=map]'), function(){
+      loadMap($(this).attr('id'), 12);
+    })
+  }
+
+
+%div{:style => "width: 300px;"}
+  #map{:style => "width: 300px; height: 400px;"}

@@ -57,3 +57,5 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'fog'
 gem "haml-rails", "~> 0.9"
 gem 'bootstrap_form'
+gem 'gmaps4rails'
+gem 'underscore-rails'

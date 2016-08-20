@@ -3,12 +3,20 @@
 
 :javascript
   function initMap(){
+    var infowindow = new google.maps.InfoWindow({
+      content: 'Este es la informacion'
+    });
 
     var placeMarker = function(location, map){
       var marker = new google.maps.Marker({
         position: location,
         map: map,
+        label: 'a',
         icon: 'http://frentebatalla.com/imagenes/teoria/pokebolas/sprites/gsball.png'
+      });
+
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
       });
     }
     var loadMap = function(selectorId, zoom){

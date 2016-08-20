@@ -7,7 +7,8 @@
     var placeMarker = function(location, map){
       var marker = new google.maps.Marker({
         position: location,
-        map: map
+        map: map,
+        icon: 'http://frentebatalla.com/imagenes/teoria/pokebolas/sprites/gsball.png'
       });
     }
     var loadMap = function(selectorId, zoom){
@@ -16,7 +17,7 @@
        internal: {id: selectorId},
        provider: {
         backgroundColor: "red",
-        center: new google.maps.LatLng(20.6739384, -103.4054544),
+        center: {lat: 20.6739384, lng: -103.4054544},
         zoom: zoom
        }
       }, function(){
@@ -32,5 +33,5 @@
   }
 
 
-%div{:style => "width: 300px;"}
-  #map{:style => "width: 300px; height: 400px;"}
+%div{:style => "width: 100%;"}
+  #map{:style => "width: 100%; height: 500px;"}
